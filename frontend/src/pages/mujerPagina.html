@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/paginasStyle.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="encabezado-contenedor">
+        <div class="encabezado-hombre">
+            <span>Línea femeninca EAVANT</span>
+            <h3>Moda Mujer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos praesentium nisi itaque.
+            </p>
+            <span class="borde-bajo"></span>
+        </div>
+    </div>
+
+    <div class="abrir-filtros-contenedor">
+        <button id="btnAbrirFiltros"><img src="../assets/img/MageFilter.svg" alt="">Filtrar y ordenar</button>
+    </div>
+    <section class="seccion-productos">
+        <div id="contenedorFiltros" class="contendor-no-visible">
+            <span class="titulo-filtro">Filtrar y ordenar</span>
+            <details class="filtros">
+                <summary>
+                    Categoría
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> vestidos
+                        </label>
+                    </li>
+
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Camisas
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> blusas
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Conjuntos
+                        </label>
+                    </li>
+
+                </ul>
+            </details>
+            <details class="filtros">
+                <summary>
+                    Talla
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> XS
+                        </label>
+                    </li>
+
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> S
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> M
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> L
+                        </label>
+                    </li>
+                </ul>
+            </details>
+            <details class="filtros">
+                <summary>
+                    Marca
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Basement
+                        </label>
+                    </li>
+
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Denimlab
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Asics
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Alpha
+                        </label>
+                    </li>
+                </ul>
+            </details>
+            <details class="filtros">
+                <summary>
+                    Color
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item ">
+
+                        <label>
+                            <input type="checkbox"> NEGRO
+                        </label>
+                    </li>
+
+                    <li class="filtros-item ">
+                        <label>
+                            <input type="checkbox"> AZUL
+                        </label>
+                    </li>
+                    <li class="filtros-item ">
+                        <label>
+                            <input type="checkbox"> BEIGE
+                        </label>
+                    </li>
+                    <li class="filtros-item ">
+                        <label>
+                            <input type="checkbox"> BLANCO
+                        </label>
+                    </li>
+                    <li class="filtros-item ">
+                        <label>
+                            <input type="checkbox"> BURDEO
+                        </label>
+                    </li>
+                    <li class="filtros-item ">
+                        <label>
+                            <input type="checkbox"> MARRON
+                        </label>
+                    </li>
+
+                </ul>
+            </details>
+            <details class="filtros">
+                <summary>
+                    Material
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Algodon
+                        </label>
+                    </li>
+
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Cuero
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Jean
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Slim fit
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> Lana
+                        </label>
+                    </li>
+
+                </ul>
+            </details>
+            <details class="filtros">
+                <summary>
+                    Precio
+                    <svg class="icono-flecha" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                    </svg>
+                </summary>
+                <ul class="ul-filtros">
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> HASTA S/50
+                        </label>
+                    </li>
+
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> S/50 - S/100
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> S/100 - S/250
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> S/250 - S/500
+                        </label>
+                    </li>
+                    <li class="filtros-item">
+                        <label>
+                            <input type="checkbox"> S/500 - S/1000
+                        </label>
+                    </li>
+
+                </ul>
+            </details>
+
+            <button class="limpiar-filtros-btn">
+                Limpiar filtros
+            </button>
+        </div>
+        <div class="tarjetas-productos">
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/vestidoGranate.jpg" alt="">
+                    <button class="agregar-carrito-btn">
+                        <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir
+                    </button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 150.00
+
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Vestido de Fiesta Granate
+
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/chaquetaBlazer.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 120.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Chaqueta Blazer Negra
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/conjuntobeigue.png" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 170.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Conjunto de Blazer y Pantalón Beige
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/blusaBeige.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+
+                        </span>
+                        <span class="precio-prod">S/. 95.00
+
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Blusa Beige con Detalles en Encaje
+                    </span>
+                </div>
+            </article>
+
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/chalecoGris.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 110.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Chaleco Gris de Lana
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/vestidopurple.jpg " alt="">
+                    <button> <img src=" ../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 140.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Vestido Morado con Detalles en Encaje
+
+                    </span>
+                </div>
+            </article>
+
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/VestidoLargo.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 85.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Vestido Largo con Estampado Floral
+
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/blusaAzul.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 75.00
+
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Blusa Azul con Detalles en Encaje
+
+                    </span>
+                </div>
+            </article>
+            <article class="pieza-item ">
+                <div class="imagen-contenedor aspect-square">
+                    <img src="../assets/img/prendasMujer/camisaRayas.jpg" alt="">
+                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
+                </div>
+                <div class="info-producto">
+                    <div class="cont-precio">
+                        <span class="coleccion-prod">COLECCIÓN MUJER
+                        </span>
+                        <span class="precio-prod">S/. 90.00
+                        </span>
+                    </div>
+                    <span class="nombre-prod">Camisa de Rayas con Detalles en Encaje
+                    </span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="../assets/js/ventanas.js"></script>
+</body>
+
+</html>
