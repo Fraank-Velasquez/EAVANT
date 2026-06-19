@@ -10,8 +10,6 @@ function iniciarVentanas() {
     }
 }
 
-
-
 /* Lógica del Sistema de Detalle AVANT */
 
 // 1. Cambio de imágenes
@@ -57,3 +55,18 @@ function toggleAccordion(accordionId) {
     }
 }
 
+// Seleccionamos todos los encabezados del acordeón
+const encabezados = document.querySelectorAll('.encabezado-acordeon');
+
+encabezados.forEach(encabezado => {
+    encabezado.addEventListener('click', function () {
+        const contenido = this.nextElementSibling;
+        const estaVisible = contenido.style.display === 'block';
+
+        // Alternar visibilidad
+        contenido.style.display = estaVisible ? 'none' : 'block';
+
+        // Cambiar el signo
+        this.querySelector('span').textContent = estaVisible ? '+' : '-';
+    });
+});

@@ -26,6 +26,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/css/indexStyle.css">
+    <link rel="stylesheet" href="../assets/css/producto.css">
     <title>E A V A N T</title>
 </head>
 
@@ -63,11 +64,11 @@
         </div>
         <div class="acciones-pagina">
             <ul class="accion-ul">
-                <li class="accion-item"><button class="btn-accion"><img src="../assets/img/UilSearch.svg"
-                            alt=""></button></li>
+                <li class="accion-item"><button id="btn-buscar" class="btn-accion"><img
+                            src="../assets/img/UilSearch.svg" alt=""></button></li>
                 <li class="accion-item"><button class="btn-accion"><img src="../assets/img/LucideUser.svg"
                             alt=""></button></li>
-                <li class="accion-item"><button class="btn-accion carrito-btn"><img
+                <li class="accion-item"><button id="carrito-btn" class="btn-accion carrito-btn"><img
                             src="../assets/img/MageShoppingBag.svg" alt="">
                         <span class="contador-carrito">0</span>
                     </button></li>
@@ -77,6 +78,8 @@
     <main id="contenido-dinamico" class="contenido-dinamico">
 
     </main>
+
+    <div id="carrito-root"></div>
 
     <footer>
         <div class="info-footer">
@@ -164,6 +167,7 @@
     <script src="../services/cambiarPagina.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/ventanas.js"></script>
+    <script src="../assets/js/carrito.js"></script>
 
 </body>
 

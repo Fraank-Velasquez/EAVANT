@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logoFont: 'Cormorant Garamond';
+    --encabezadosFont: 'Space Grotesk';
+    --principalFont: Inter;
+    --tallasBtnAddFont: 'JetBrains Mono';
+
+    --colorBlancoBg: #F9F8F6;
+    --colorNegroIntenso: #0A0A0A;
+    --colorCarbono: #1C1C1E;
+    --colorGrisNeutro: #8E8E93;
+    --colorGrisIntenso: #5e5e5e;
+    --colorGrisLineal: #E5E5E5;
+}
+
+body {
+    background: var(--colorBlancoBg);
+}
+
+/* ---- Volver ---- */
+
+.avant-back-nav {
+    padding: 1.4rem 3rem;
+}
+
+.avant-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    background: none;
+    border: none;
+    font-family: var(--tallasBtnAddFont);
+    font-size: .68rem;
+    letter-spacing: .18rem;
+    text-transform: uppercase;
+    color: var(--colorGrisNeutro);
+    cursor: pointer;
+    transition: color .25s;
+}
+
+.avant-back-btn:hover {
+    color: var(--colorNegroIntenso);
+}
+
+/* ---- Layout principal ---- */
+
+.avant-producto-seccion {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 5rem;
+    padding: 1rem 3rem 5rem 3rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ---- Galería: imagen arriba, miniaturas abajo ---- */
+
+.avant-galeria {
+    display: flex;
+    gap: 1rem;
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+}
+
+.avant-imagen-principal {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 3 / 3.8;
+    background: #eee;
+}
+
+.avant-imagen-principal:hover img {
+    scale: 1.059;
+}
+
+.avant-imagen-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(88%);
+    transition: all 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+}
+
+.avant-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.avant-thumbnail-btn {
+    width: 80px;
+    height: 96px;
+    border: 1.5px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    transition: border-color .25s ease;
+    flex-shrink: 0;
+}
+
+.avant-thumbnail-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(65%);
+    transition: filter .3s;
+}
+
+.avant-thumbnail-btn:hover img,
+.avant-thumbnail-btn.active img {
+    filter: saturate(100%);
+}
+
+.avant-thumbnail-btn.active {
+    border-color: var(--colorNegroIntenso);
+}
+
+/* ---- Info panel ---- */
+
+.avant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding-top: .2rem;
+}
+
+.avant-info-header {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.avant-coleccion-tag {
+    font-family: var(--tallasBtnAddFont);
+    font-size: .75rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: var(--colorGrisNeutro);
+}
+
+.avant-nombre-producto {
+    font-family: var(--principalFont);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--colorCarbono);
+    line-height: 1.15;
+    letter-spacing: .01rem;
+}
+
+.avant-precio {
+    font-family: var(--tallasBtnAddFont);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--colorNegroIntenso);
+    letter-spacing: .03rem;
+    margin-top: .2rem;
+}
+
+.avant-descripcion-corta {
+    font-family: var(--principalFont), sans-serif;
+    font-size: .88rem;
+    color: var(--colorGrisIntenso);
+    line-height: 1.75;
+    margin-top: .3rem;
+}
+
+/* ---- Tallas ---- */
+
+.avant-tallas-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.avant-tallas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avant-label {
+    font-family: var(--tallasBtnAddFont);
+    font-size: .65rem;
+    letter-spacing: .22rem;
+    text-transform: uppercase;
+    color: var(--colorGrisIntenso);
+    font-weight: 600;
+}
+
+.avant-guia-tallas-btn {
+    background: none;
+    border: none;
+    font-family: var(--tallasBtnAddFont);
+    font-size: .65rem;
+    letter-spacing: .08rem;
+    color: var(--colorGrisNeutro);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .2s;
+}
+
+.avant-guia-tallas-btn:hover {
+    color: var(--colorNegroIntenso);
+}
+
+.avant-tallas-grid {
+    display: flex;
+    gap: .55rem;
+}
+
+.avant-size-btn {
+    width: 58px;
+    height: 58px;
+    border: 1px solid var(--colorGrisLineal);
+    background: var(--colorBlancoBg);
+    font-family: var(--tallasBtnAddFont);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .06rem;
+    color: var(--colorCarbono);
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all .22s ease;
+}
+
+.avant-size-btn:hover {
+    border-color: var(--colorCarbono);
+}
+
+.avant-size-btn.active {
+    border-color: var(--colorNegroIntenso);
+    background: var(--colorNegroIntenso);
+    color: var(--colorBlancoBg);
+}
+
+.avant-size-agotado {
+    opacity: .28;
+    cursor: not-allowed;
+}
+
+.avant-size-agotado:hover {
+    border-color: var(--colorGrisLineal);
+    background: var(--colorBlancoBg);
+    color: var(--colorCarbono);
+}
+
+/* ---- Botón agregar ---- */
+
+.avant-btn-agregar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    padding: 1.05rem 1.5rem;
+    background: var(--colorNegroIntenso);
+    color: var(--colorBlancoBg);
+    border: none;
+    font-family: var(--tallasBtnAddFont);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .22rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: opacity .2s ease;
+}
+
+.avant-btn-agregar:hover {
+    opacity: .88;
+}
+
+/* ---- Acordeones ---- */
+
+.avant-acordeones {
+    display: flex;
+    flex-direction: column;
+}
+
+.avant-accordion-item {
+    border-bottom: 1px solid var(--colorGrisLineal);
+}
+
+.avant-accordion-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 1.1rem 0;
+    cursor: pointer;
+    font-family: var(--principalFont);
+    font-size: .78rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--colorGrisIntenso);
+    text-align: left;
+    transition: color .2s;
+}
+
+.avant-accordion-trigger:hover {
+    color: var(--colorNegroIntenso);
+}
+
+.avant-accordion-icon {
+    transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+    color: var(--colorGrisNeutro);
+}
+
+.avant-accordion-item.active .avant-accordion-icon {
+    transform: none;
+}
+
+.avant-accordion-item:not(.active) .avant-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.avant-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.avant-accordion-inner {
+    padding-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.avant-accordion-inner p {
+    font-family: var(--principalFont), sans-serif;
+    font-size: .86rem;
+    color: var(--colorGrisIntenso);
+    line-height: 1.75;
+}
+
+.avant-materiales-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    padding: 0;
+}
+
+.avant-materiales-lista li {
+    font-family: var(--principalFont), sans-serif;
+    font-size: .84rem;
+    color: var(--colorGrisNeutro);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.avant-materiales-lista li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--colorGrisNeutro);
+}
+
+/* ---- Productos relacionados ---- */
+
+.avant-relacionados {
+    padding: 4rem 3rem 5rem 3rem;
+    border-top: 1px solid var(--colorGrisLineal);
+}
+
+.avant-relacionados-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 3rem;
+}
+
+.avant-relacionados-header p {
+    color: var(--colorGrisNeutro);
+    font-family: var(--logoFont);
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.avant-relacionados-header h2 {
+    color: var(--colorNegroIntenso);
+    font-family: var(--logoFont);
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.avant-linea-decorativa {
+    display: block;
+    background: var(--colorGrisNeutro);
+    width: 80px;
+    height: 1px;
+    margin-top: .8rem;
+}
+
+/* ---- Grid relacionados + tarjetas (igual que paginasStyle) ---- */
+
+.avant-relacionados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.imagen-contenedor {
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+    filter: saturate(80%);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imagen-contenedor button {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--colorBlancoBg);
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    font-family: var(--tallasBtnAddFont);
+    gap: .5rem;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imagen-contenedor button:hover {
+    background: var(--colorNegroIntenso);
+    color: var(--colorBlancoBg);
+}
+
+.imagen-contenedor button:hover img {
+    filter: brightness(100);
+}
+
+.pieza-item {
+    cursor: pointer;
+}
+
+.pieza-item:hover img {
+    transform: scale(1.03);
+    filter: saturate(120%);
+}
+
+.pieza-item:hover .imagen-contenedor>button {
+    display: flex;
+}
+
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 0;
+    gap: .3rem;
+}
+
+.cont-precio {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--tallasBtnAddFont);
+}
+
+.coleccion-prod {
+    color: var(--colorGrisNeutro);
+    font-size: .7rem;
+    letter-spacing: 2px;
+}
+
+.precio-prod {
+    font-size: .9rem;
+    color: var(--colorNegroIntenso);
+    font-weight: 1000;
+}
+
+.nombre-prod {
+    font-family: var(--encabezadosFont);
+    color: var(--colorCarbono);
+    font-size: 1rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.pieza-item:hover .nombre-prod {
+    border-bottom: 1px solid var(--colorNegroIntenso);
+}

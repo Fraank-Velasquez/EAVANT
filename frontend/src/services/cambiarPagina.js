@@ -31,8 +31,3 @@ async function cargarVista(nombreVista) {
         contenedorVista.innerText = `Error al cargar la vista`;
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    cargarVista('inicio');
-});
