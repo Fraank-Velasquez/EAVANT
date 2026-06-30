@@ -75,6 +75,21 @@
             </ul>
         </div>
     </div>
+    <div id="panel-busqueda" class="panel-busqueda">
+        <div class="panel-busqueda-cabecera">
+            <div class="panel-busqueda-input-wrapper">
+                <img src="../assets/img/UilSearch.svg" alt="" class="buscar-icono-input">
+                <input type="text" id="input-busqueda" placeholder="Buscar en EAVANT..." autocomplete="off">
+            </div>
+            <button id="btn-cerrar-busqueda" class="btn-cerrar-busqueda">
+                &times;
+            </button>
+        </div>
+        <div class="panel-busqueda-resultados" id="contenedor-resultados-busqueda">
+            <!-- Los resultados de búsqueda dinámicos se inyectarán aquí -->
+        </div>
+    </div>
+
     <main id="contenido-dinamico" class="contenido-dinamico">
 
     </main>
@@ -164,6 +179,26 @@
         </div>
     </footer>
 
+    <!-- Template global para tarjetas de producto -->
+    <template id="plantilla-tarjeta-producto">
+        <article class="pieza-item tarjeta-producto">
+            <div class="imagen-contenedor aspect-square">
+                <img class="producto-imagen" src="" alt="">
+                <button class="btn-agregar-tarjeta">
+                    <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir
+                </button>
+            </div>
+            <div class="info-producto">
+                <div class="cont-precio">
+                    <span class="coleccion-prod producto-coleccion"></span>
+                    <span class="precio-prod producto-precio"></span>
+                </div>
+                <span class="nombre-prod producto-nombre"></span>
+            </div>
+        </article>
+    </template>
+
+    <script src="../services/datosProductos.js"></script>
     <script src="../services/cambiarPagina.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/ventanas.js"></script>

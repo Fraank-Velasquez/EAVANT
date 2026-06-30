@@ -3,6 +3,14 @@ async function cargarVista(nombreVista) {
     const barraNavegacion = document.getElementById('naveg-header');
     const logoH = document.getElementById('logo-h');
     const logop = document.getElementById('logo-p');
+    const btnBuscar = document.getElementById('btn-buscar');
+    const panelBusqueda = document.getElementById('panel-busqueda');
+
+    // Cerrar buscador si se cambia de vista
+    if (panelBusqueda) {
+        panelBusqueda.classList.remove('panel-busqueda-visible');
+    }
+
     try {
         const ruta = '../pages/' + nombreVista + '.html';
         const respuesta = await fetch(ruta);
@@ -21,7 +29,31 @@ async function cargarVista(nombreVista) {
                 logoH.classList.add('logo-nav-h-negro');
                 logop.classList.add('logo-nav-p-negro');
             }
+
+            // Ocultar/mostrar el botón de búsqueda. Solo visible en Hombre y Mujer
+            if (btnBuscar) {
+                if (nombreVista === 'HombrePagina' || nombreVista === 'mujerPagina') {
+                    btnBuscar.style.display = 'block';
+                } else {
+                    btnBuscar.style.display = 'none';
+                }
+            }
+
+            // Inicializar animaciones base
             iniciarVentanas();
+
+            // Disparar lógica específica de la vista cargada si existe su función
+            if (nombreVista === 'inicio' && typeof inicializarInicio === 'function') {
+                inicializarInicio();
+            } else if (nombreVista === 'HombrePagina' && typeof inicializarCatalogo === 'function') {
+                inicializarCatalogo('hombre');
+            } else if (nombreVista === 'mujerPagina' && typeof inicializarCatalogo === 'function') {
+                inicializarCatalogo('mujer');
+            } else if (nombreVista === 'productoVista' && typeof inicializarProductoVista === 'function') {
+                inicializarProductoVista();
+            } else if (nombreVista === 'carrito' && typeof inicializarCarrito === 'function') {
+                inicializarCarrito();
+            }
         } else {
             contenedorVista.innerText = `404 Vista No Encontrada: ${ruta}`;
             console.error(`Error ${respuesta.status} al cargar: ${ruta}`);
@@ -31,3 +63,4 @@ async function cargarVista(nombreVista) {
         contenedorVista.innerText = `Error al cargar la vista`;
     }
 }
+

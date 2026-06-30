@@ -1,0 +1,543 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-blanco-bg;
+}
+
+.bannerHeader {
+  background-color: $color-negro-intenso;
+  color: $color-blanco-bg;
+  font-family: $encabezados-font;
+  font-size: .7rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .2rem;
+  padding: .3rem;
+  height: 28px;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+  }
+}
+
+.naveg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.naveg-header-inicio {
+  position: sticky;
+  top: 25px;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem 4rem;
+  animation: sombraNav linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0px 100vh;
+}
+
+.naveg-header-otros {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem 4rem;
+  background: rgba(249, 248, 246, 0.92);
+  box-shadow: $sombra-header;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(5px);
+  animation: navAninm linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0px 10vh;
+}
+
+@keyframes navAninm {
+  from {
+    padding: 1rem 4rem;
+  }
+  to {
+    padding: .4rem 4rem;
+  }
+}
+
+@keyframes sombraNav {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    padding: 1rem 4rem;
+    top: 28px;
+  }
+  10% {
+    top: 0px;
+  }
+  90% {
+    background: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    padding: 1rem 4rem;
+  }
+  100% {
+    box-shadow: $sombra-header;
+    padding: .4rem 4rem;
+    top: 0;
+    background: rgba(249, 248, 246, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.nav-ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+  height: 100%;
+}
+
+.nav-item {
+  padding: 0 .3rem;
+
+  &:hover button {
+    color: $color-negro-intenso;
+    border-bottom: 1px solid $color-carbono;
+  }
+}
+
+@keyframes colorNav {
+  0% {
+    color: $color-blanco-bg;
+  }
+  90% {
+    color: $color-blanco-bg;
+  }
+  100% {
+    color: $color-negro-intenso;
+  }
+}
+
+.nav-link-btn {
+  border: none;
+  background: none;
+  box-shadow: none;
+  color: $color-gris-intenso;
+  font-weight: 600;
+  font-family: $tallas-btn-add-font;
+  font-size: .86rem;
+  letter-spacing: .14rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: $transicion-suave;
+}
+
+.logo-pagina {
+  user-select: none;
+  padding: 0;
+
+  h1 {
+    font-family: $logo-font;
+    font-weight: 100;
+    text-align: center;
+    animation: colorNav linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0px 100vh;
+
+    &.logo-nav-h-negro {
+      color: $color-negro-intenso;
+      animation: none;
+    }
+  }
+
+  p {
+    font-family: $logo-font;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .2rem;
+    text-align: center;
+    animation: colorNav linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0px 100vh;
+
+    &.logo-nav-p-negro {
+      color: $color-gris-neutro;
+      animation: none;
+    }
+  }
+}
+
+.accion-ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0 .5rem;
+  height: 100%;
+}
+
+.accion-item {
+  &:hover img {
+    filter: brightness(0);
+  }
+}
+
+.btn-accion {
+  cursor: pointer;
+  border: none;
+  background: none;
+  box-shadow: none;
+  margin: 0 24px 0 0;
+  padding: 4px;
+}
+
+.carrito-btn {
+  display: flex;
+  gap: 5px;
+}
+
+.contador-carrito {
+  background: rgb(0, 0, 0);
+  color: $color-blanco-bg;
+  font-family: $tallas-btn-add-font;
+  font-size: .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 80%;
+  width: 1rem;
+}
+
+.contenido-dinamico {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Estilos del Buscador Deslizable Superior (Estilo Prada / Louis Vuitton)
+.panel-busqueda {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(249, 248, 246, 0.98);
+  z-index: 2000;
+  padding: 3rem 6rem;
+  overflow-y: auto;
+  transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+
+  &.panel-busqueda-visible {
+    top: 0;
+  }
+
+  .panel-busqueda-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-gris-lineal;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+
+    .panel-busqueda-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-grow: 1;
+
+      .buscar-icono-input {
+        width: 24px;
+        height: 24px;
+        opacity: 0.6;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        font-family: $logo-font;
+        font-size: 2.2rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-negro-intenso;
+        outline: none;
+
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    .btn-cerrar-busqueda {
+      background: transparent;
+      border: none;
+      font-size: 2.5rem;
+      font-weight: 200;
+      color: $color-negro-intenso;
+      cursor: pointer;
+      padding: 0 1rem;
+      transition: $transicion-suave;
+
+      &:hover {
+        opacity: 0.6;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .panel-busqueda-resultados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mensaje-busqueda-vacia {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: $logo-font;
+    font-size: 1.5rem;
+    color: $color-gris-neutro;
+    padding: 4rem 0;
+  }
+}
+
+// Estilos del Footer
+footer {
+  background-color: $color-negro-intenso;
+  color: $color-blanco-bg;
+  font-family: $principal-font, sans-serif;
+  padding: 80px 24px 40px 24px;
+  border-top: 1px solid rgba(229, 229, 229, 0.15);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.info-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 32px;
+  padding-bottom: 60px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.info-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-family: $logo-font, serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: #FFFFFF;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-family: $encabezados-font, sans-serif;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: #FFFFFF;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: .75rem;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    color: $color-gris-neutro;
+    margin: 0;
+  }
+}
+
+.inp-foot {
+  padding: 0 2rem;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.ul-coleccion-f,
+.nosotros-ul-f {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-coleccion-footer,
+.nosotros-btn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: $tallas-btn-add-font, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: $color-gris-neutro;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s;
+
+  &:hover {
+    color: $color-blanco-bg;
+    transform: translateX(4px);
+  }
+}
+
+.info-seccion {
+  .subscription-container {
+    display: flex;
+    position: relative;
+    margin-top: 8px;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.3);
+    transition: border-color 0.4s;
+
+    &:focus-within {
+      border-color: $color-blanco-bg;
+    }
+
+    input[type="text"] {
+      background: transparent;
+      border: none;
+      padding: 12px 40px 12px 0;
+      color: $color-blanco-bg;
+      font-family: $tallas-btn-add-font, monospace;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      width: 100%;
+      outline: none;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: rgba(249, 248, 246, 0.3);
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: $color-blanco-bg;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 8px 4px;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.tyc-footer {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(229, 229, 229, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copy-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  p {
+    font-family: $tallas-btn-add-font, monospace;
+    font-size: .7rem;
+    letter-spacing: 0.08em;
+    color: $color-gris-neutro;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  a {
+    font-family: $tallas-btn-add-font, monospace;
+    font-size: .7rem;
+    letter-spacing: 0.08em;
+    color: $color-gris-neutro;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-blanco-bg;
+    }
+  }
+}
+
+.btn-subir {
+  background-color: transparent;
+  color: $color-gris-neutro;
+  border: 1px solid $color-gris-intenso;
+  font-family: $tallas-btn-add-font, monospace;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background-color: $color-negro-intenso;
+    color: $color-blanco-bg;
+    border-color: $color-negro-intenso;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 10, 10, 0.08);
+  }
+}
+
+.icon-subir {
+  transition: transform 0.3s ease;
+}

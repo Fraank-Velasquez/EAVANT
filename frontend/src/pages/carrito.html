@@ -1,0 +1,221 @@
+<script>
+    if (window === window.top && !window.PRODUCTOS) {
+        localStorage.setItem('vistaInicial', 'carrito');
+        window.location.href = '../layouts/index.html';
+    }
+</script>
+<link rel="stylesheet" href="../assets/css/carrito.css">
+
+
+    <div class="contenedor-carrito-seccion">
+        <!-- Cabecera de Página -->
+        <div class="cabecera-carrito">
+            <h2 id="titulo-pagina-carrito">Carrito de Compras</h2>
+            <p id="subtitulo-pagina-carrito">Revisa tus piezas antes de proceder</p>
+        </div>
+
+        <!-- VISTA 1: DETALLE DEL CARRITO -->
+        <div id="vista-carrito-items" class="cuerpo-carrito">
+            <div class="lista-items-carrito" id="contenedor-items-carrito">
+                <!-- Se inyectarán los items agregados dinámicamente -->
+            </div>
+
+            <!-- Resumen de Costos lateral -->
+            <div class="resumen-compra" id="bloque-resumen-compra">
+                <h3>Resumen de Compra</h3>
+                <div class="resumen-fila">
+                    <span>Subtotal</span>
+                    <span id="resumen-subtotal">S/. 0.00</span>
+                </div>
+                <div class="resumen-fila">
+                    <span>Envío</span>
+                    <span id="resumen-envio">S/. 15.00</span>
+                </div>
+                <div class="resumen-fila resumen-total">
+                    <span>Total</span>
+                    <span id="resumen-total">S/. 0.00</span>
+                </div>
+                <button class="btn-proceder-pago" id="btn-proceder-pago">Proceder al Pago</button>
+                <button class="btn-seguir-comprando" onclick="cargarVista('inicio')">Seguir Comprando</button>
+            </div>
+        </div>
+
+        <!-- VISTA 2: FORMULARIO DE CHECKOUT (ENVÍO Y PAGO EN PASOS) -->
+        <div id="vista-checkout" class="seccion-checkout contendor-no-visible">
+            <div class="checkout-grid">
+                
+                <!-- Formularios de Pago y Envío -->
+                <div class="checkout-tarjetas-columna">
+                    
+                    <!-- Tarjeta 1: Dirección de Envío (Paso 2) -->
+                    <div class="checkout-tarjeta-bloque" id="bloque-envio">
+                        <h3>1. Dirección de Envío</h3>
+                        <form id="formulario-envio" onsubmit="event.preventDefault();">
+                            <div class="form-grupo">
+                                <label for="input-nombre-completo">Nombre Completo</label>
+                                <input type="text" id="input-nombre-completo" required placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="input-direccion">Dirección de Entrega</label>
+                                <input type="text" id="input-direccion" required placeholder="Av. Larco 123, Dpto 402">
+                            </div>
+                            <div class="form-grupo">
+                                <div class="form-fila-doble">
+                                    <div>
+                                        <label for="input-ciudad">Ciudad / Distrito</label>
+                                        <input type="text" id="input-ciudad" required placeholder="Lima">
+                                    </div>
+                                    <div>
+                                        <label for="input-telefono">Teléfono</label>
+                                        <input type="tel" id="input-telefono" required placeholder="987654321">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" class="btn-finalizar-compra" id="btn-continuar-pago" style="margin-top: 1.5rem;">Continuar al Pago</button>
+                        <button type="button" class="btn-seguir-comprando" id="btn-regresar-carrito-desde-envio" style="margin-top: 1rem;">Regresar al Carrito</button>
+                    </div>
+
+                    <!-- Tarjeta 2: Detalles de Pago (Paso 3) -->
+                    <div class="checkout-tarjeta-bloque contendor-no-visible" id="bloque-pago">
+                        <h3>2. Información de Pago</h3>
+                        
+                        <!-- Selector de métodos de pago -->
+                        <div class="metodo-pago-selector">
+                            <button type="button" class="btn-metodo-pago activo" data-metodo="visa">
+                                <img src="../assets/img/LucideUser.svg" alt="" style="display:none;">
+                                <span>VISA</span>
+                            </button>
+                            <button type="button" class="btn-metodo-pago" data-metodo="mastercard">
+                                <span>MASTERCARD</span>
+                            </button>
+                            <button type="button" class="btn-metodo-pago" data-metodo="yape">
+                                <span>YAPE</span>
+                            </button>
+                        </div>
+
+                        <!-- Formulario de Tarjeta de Crédito (Visa / Mastercard) -->
+                        <div id="pago-tarjeta-seccion" class="detalle-pago-tarjeta activo">
+                            <form id="formulario-tarjeta" onsubmit="event.preventDefault();">
+                                <div class="form-grupo">
+                                    <label for="tarjeta-titular">Nombre del Titular</label>
+                                    <input type="text" id="tarjeta-titular" placeholder="COMO APARECE EN LA TARJETA">
+                                </div>
+                                <div class="form-grupo">
+                                    <label for="tarjeta-numero">Número de Tarjeta</label>
+                                    <input type="text" id="tarjeta-numero" placeholder="4111 2222 3333 4444" maxlength="19">
+                                </div>
+                                <div class="form-grupo">
+                                    <div class="form-fila-doble">
+                                        <div>
+                                            <label for="tarjeta-expiracion">Vencimiento</label>
+                                            <input type="text" id="tarjeta-expiracion" placeholder="MM/AA" maxlength="5">
+                                        </div>
+                                        <div>
+                                            <label for="tarjeta-cvv">CVV</label>
+                                            <input type="password" id="tarjeta-cvv" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Detalle de Pago para Yape -->
+                        <div id="pago-yape-seccion" class="detalle-pago-yape">
+                            <div class="yape-qr-mock">
+                                [ QR YAPE MOCK ]
+                            </div>
+                            <p>Escanea el código QR desde tu app Yape o ingresa tu número asociado:</p>
+                            <div class="form-grupo" style="width: 100%; max-width: 300px;">
+                                <input type="tel" id="yape-celular" placeholder="Número celular Yape" maxlength="9">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-finalizar-compra" id="btn-finalizar-compra">Finalizar Compra Seguro</button>
+                        <button type="button" class="btn-seguir-comprando" id="btn-regresar-envio" style="margin-top: 1rem;">Regresar a Dirección de Envío</button>
+                    </div>
+
+                </div>
+
+                <!-- Columna Derecha: Resumen Checkout (Visible en pasos 2 y 3) -->
+                <div class="checkout-resumen-columna">
+                    <div class="resumen-compra">
+                        <h3>Resumen del Pedido</h3>
+                        <div id="contenedor-checkout-resumen-items" style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
+                            <!-- Items de compra resumidos -->
+                        </div>
+                        <div class="resumen-fila">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">S/. 0.00</span>
+                        </div>
+                        <div class="resumen-fila">
+                            <span>Envío</span>
+                            <span id="checkout-envio">S/. 15.00</span>
+                        </div>
+                        <div class="resumen-fila resumen-total">
+                            <span>Total</span>
+                            <span id="checkout-total">S/. 0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VISTA 3: MODAL DE ÉXITO -->
+        <div id="vista-exito-checkout" class="exito-modal-overlay contendor-no-visible">
+            <div class="checkout-exito-cuerpo">
+                <div class="icono-exito-check">✓</div>
+                <h3>¡Gracias por su compra!</h3>
+                <p>Su pedido ha sido procesado de manera exitosa en EAVANT. Hemos enviado un correo con el comprobante detallado y la guía de seguimiento de su envío.</p>
+                
+                <div class="detalles-pedido-exito">
+                    <div>
+                        <span>Código de Pedido:</span>
+                        <span id="exito-codigo-pedido">#EV-98273</span>
+                    </div>
+                    <div>
+                        <span>Método de Pago:</span>
+                        <span id="exito-metodo-pago">Visa</span>
+                    </div>
+                    <div>
+                        <span>Dirección de Envío:</span>
+                        <span id="exito-direccion-envio">Av. Larco 123, Lima</span>
+                    </div>
+                    <div>
+                        <span>Monto Total Pagado:</span>
+                        <span id="exito-monto-pagado">S/. 165.00</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-exito-inicio" onclick="event.preventDefault(); cargarVista('inicio');">Regresar a la Tienda</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pantalla de carga animada de pasarela de pago -->
+    <div id="cargando-pago-overlay" class="cargando-pago-overlay">
+        <div class="spinner-pago"></div>
+        <p>Procesando transacción bancaria segura...</p>
+    </div>
+
+    <!-- Template local para filas de productos en el carrito -->
+    <template id="plantilla-item-carrito">
+        <div class="item-carrito">
+            <img class="item-carrito-imagen" src="" alt="">
+            <div class="item-carrito-detalles">
+                <span class="item-carrito-nombre"></span>
+                <span class="item-carrito-meta"></span>
+            </div>
+            <div class="item-carrito-cantidad-control">
+                <button class="btn-cantidad-menos">-</button>
+                <input type="number" class="input-cantidad" value="1" min="1" readonly>
+                <button class="btn-cantidad-mas">+</button>
+            </div>
+            <span class="item-carrito-precio"></span>
+            <button class="btn-eliminar-item">&times;</button>
+        </div>
+    </template>
+
+

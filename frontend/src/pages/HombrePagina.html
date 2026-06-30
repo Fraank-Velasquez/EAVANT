@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
+<script>
+    if (window === window.top && !window.PRODUCTOS) {
+        localStorage.setItem('vistaInicial', 'HombrePagina');
+        window.location.href = '../layouts/index.html';
+    }
+</script>
+<link rel="stylesheet" href="../assets/css/paginasStyle.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/paginasStyle.css">
-    <title></title>
-</head>
-
-<body>
+<div class="contenedor-pagina-hombre">
     <div class="encabezado-contenedor">
         <div class="encabezado-hombre">
             <span>Línea masculina EAVANT</span>
@@ -246,164 +244,11 @@
             </button>
         </div>
         <div class="tarjetas-productos">
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/camisaHombre.jpg" alt="">
-                    <button class="agregar-carrito-btn">
-                        <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir
-                    </button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 90.00
-
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Camisa de Vestir Slim Fit
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/imagenTerno2.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 190.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Traje lana gris oscuro
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/ChaquetaNegraCuer.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 190.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Chaqueta de Cuero Negra
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/chaquetaCueroHombre.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 190.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Chaqueta de Cuero Marrón
-                    </span>
-                </div>
-            </article>
-
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/chaquetaPorshe.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 160.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Chaqueta Porsche Design
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/PantalonDeVestirNegro.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 120.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Pantalón de Vestir Negro
-
-                    </span>
-                </div>
-            </article>
-
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/poloNegroconCuello.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 80.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Polo Negro con Cuello
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/pantalonMarron.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 110.00
-
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Pantalón de Vestir Marrón
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/ternoGranate.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE
-                        </span>
-                        <span class="precio-prod">S/. 190.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Traje de Vestir Granate
-                    </span>
-                </div>
-            </article>
+            <!-- Las tarjetas dinámicas se inyectarán aquí -->
+        </div>
+        <div id="centinela-paginacion" class="centinela-paginacion">
+            Cargando más piezas...
         </div>
     </section>
 
-    <script src="../assets/js/ventanas.js"></script>
-</body>
-
-</html>
+</div>

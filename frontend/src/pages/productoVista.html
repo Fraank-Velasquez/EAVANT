@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
+<script>
+    if (window === window.top && !window.PRODUCTOS) {
+        localStorage.setItem('vistaInicial', 'productoVista');
+        window.location.href = '../layouts/index.html';
+    }
+</script>
+<link rel="stylesheet" href="../assets/css/producto.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/producto.css">
-    <title></title>
-</head>
-
-<body>
+<div class="contenedor-pagina-producto">
 
     <!-- Volver a seccion -->
     <nav class="avant-back-nav">
@@ -29,22 +27,10 @@
         <div class="avant-galeria">
 
             <div class="avant-thumbnails">
-                <button class="avant-thumbnail-btn active"
-                    onclick="changeProductImage('../assets/img/prendasHombre/ChaquetaNegraCuer.jpg', this)">
-                    <img src="../assets/img/prendasHombre/ChaquetaNegraCuer.jpg" alt="Vista frontal">
-                </button>
-                <button class="avant-thumbnail-btn"
-                    onclick="changeProductImage('../assets/img/prendasHombre/chaquetaCueroHombre.jpg', this)">
-                    <img src="../assets/img/prendasHombre/chaquetaCueroHombre.jpg" alt="Vista alternativa">
-                </button>
-                <button class="avant-thumbnail-btn"
-                    onclick="changeProductImage('../assets/img/prendasHombre/chaquetaPorshe.jpg', this)">
-                    <img src="../assets/img/prendasHombre/chaquetaPorshe.jpg" alt="Detalle">
-                </button>
+                <!-- Miniaturas se inyectarán aquí dinámicamente -->
             </div>
             <div class="avant-imagen-principal">
-                <img id="main-product-image" src="../assets/img/prendasHombre/ChaquetaNegraCuer.jpg"
-                    alt="Chaqueta de Cuero Negra">
+                <img id="main-product-image" src="" alt="">
             </div>
         </div>
 
@@ -52,12 +38,10 @@
         <div class="avant-info">
 
             <div class="avant-info-header">
-                <p class="avant-coleccion-tag">COLECCIÓN HOMBRE &bull; EAVANT</p>
-                <h1 class="avant-nombre-producto">Chaqueta de Cuero Negra</h1>
-                <p class="avant-precio">S/. 190.00</p>
-                <p class="avant-descripcion-corta">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ea
-                    modi non corporis? Excepturi quasi nesciunt iure, nemo laboriosam veritatis consequuntur tempora eos
-                    explicabo. Perspiciatis facere dolor tenetur libero blanditiis?</p>
+                <p class="avant-coleccion-tag"></p>
+                <h1 class="avant-nombre-producto"></h1>
+                <p class="avant-precio"></p>
+                <p class="avant-descripcion-corta"></p>
             </div>
 
             <!-- Selector de tallas -->
@@ -67,10 +51,7 @@
                     <button class="avant-guia-tallas-btn">Tabla de tallas</button>
                 </div>
                 <div class="avant-tallas-grid">
-                    <button class="avant-size-btn active" onclick="selectProductSize(this)">S</button>
-                    <button class="avant-size-btn" onclick="selectProductSize(this)">M</button>
-                    <button class="avant-size-btn" onclick="selectProductSize(this)">L</button>
-                    <button class="avant-size-btn avant-size-agotado" disabled title="stock agotado">XL</button>
+                    <!-- Botones de tallas dinámicos -->
                 </div>
             </div>
 
@@ -100,14 +81,7 @@
                     </button>
                     <div class="avant-accordion-content" id="desc-accordion" style="max-height: 300px;">
                         <div class="avant-accordion-inner">
-                            <p>Esta obra representa el culmen de nuestra investigación sutil sobre la vestimenta
-                                perenne. Cada costura ha sido proyectada para armonizar con la anatomía y asegurar un
-                                declive natural de prestancia absoluta.</p>
-                            <ul class="avant-materiales-lista">
-                                <li>Cuero bovino de alta densidad y textura exclusiva</li>
-                                <li>Caída pesada pero con libertad absoluta en movimiento</li>
-                                <li>Sutilezas de acabados realizadas individualmente</li>
-                            </ul>
+                            <!-- Contenido inyectado dinámicamente -->
                         </div>
                     </div>
                 </div>
@@ -124,11 +98,10 @@
                     <div class="avant-accordion-content" id="materiales-accordion">
                         <div class="avant-accordion-inner">
                             <ul class="avant-materiales-lista">
-                                <li>100% Cuero bovino genuino</li>
-                                <li>Forro interior: 100% Satén</li>
-                                <li>Limpiar con paño húmedo</li>
-                                <li>No lavar en lavadora</li>
-                                <li>Guardar en funda de tela</li>
+                                <li>100% Materiales seleccionados de alta costura</li>
+                                <li>Hecho éticamente en talleres locales</li>
+                                <li>Limpiar con paño húmedo o tintorería en seco</li>
+                                <li>Consulte etiqueta interna para más instrucciones de cuidado</li>
                             </ul>
                         </div>
                     </div>
@@ -146,9 +119,9 @@
                     <div class="avant-accordion-content" id="envio-accordion">
                         <div class="avant-accordion-inner">
                             <ul class="avant-materiales-lista">
-                                <li>Envío estándar: 3–5 días hábiles</li>
-                                <li>Envío express: 24–48 horas</li>
-                                <li>Devoluciones gratuitas en 30 días</li>
+                                <li>Envío estándar gratuito: 3–5 días hábiles</li>
+                                <li>Envío express prioritario: 24–48 horas</li>
+                                <li>Devoluciones gratuitas extendidas a 30 días</li>
                                 <li>Cambios sin costo adicional</li>
                             </ul>
                         </div>
@@ -167,63 +140,22 @@
             <h2>Piezas de la misma colección</h2>
             <span class="avant-linea-decorativa"></span>
         </div>
-        <div class="avant-relacionados-grid">
-            <article class="pieza-item">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/chaquetaCueroHombre.jpg" alt="Chaqueta de Cuero Marrón">
-                    <button><img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE</span>
-                        <span class="precio-prod">S/. 190.00</span>
-                    </div>
-                    <span class="nombre-prod">Chaqueta de Cuero Marrón</span>
-                </div>
-            </article>
-            <article class="pieza-item">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/imagenTerno2.jpg" alt="Traje lana gris oscuro">
-                    <button><img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE</span>
-                        <span class="precio-prod">S/. 190.00</span>
-                    </div>
-                    <span class="nombre-prod">Traje lana gris oscuro</span>
-                </div>
-            </article>
-            <article class="pieza-item">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/poloNegroconCuello.jpg" alt="Polo Negro con Cuello">
-                    <button><img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE</span>
-                        <span class="precio-prod">S/. 80.00</span>
-                    </div>
-                    <span class="nombre-prod">Polo Negro con Cuello</span>
-                </div>
-            </article>
-            <article class="pieza-item">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasHombre/PantalonDeVestirNegro.jpg" alt="Pantalón de Vestir Negro">
-                    <button><img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN HOMBRE</span>
-                        <span class="precio-prod">S/. 120.00</span>
-                    </div>
-                    <span class="nombre-prod">Pantalón de Vestir Negro</span>
-                </div>
-            </article>
+        <div class="avant-relacionados-carrusel-contenedor">
+            <button id="btn-carrusel-izq" class="avant-btn-carrusel btn-carrusel-izq">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <div id="contenedor-relacionados-carrusel" class="avant-relacionados-carrusel">
+                <!-- Tarjetas dinámicas se inyectarán aquí -->
+            </div>
+            <button id="btn-carrusel-der" class="avant-btn-carrusel btn-carrusel-der">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
         </div>
     </section>
-
-    <script src="../assets/js/ventanas.js"></script>
-</body>
-
-</html>
+</div>

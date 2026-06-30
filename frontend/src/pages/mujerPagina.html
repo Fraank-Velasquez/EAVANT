@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
+<script>
+    if (window === window.top && !window.PRODUCTOS) {
+        localStorage.setItem('vistaInicial', 'mujerPagina');
+        window.location.href = '../layouts/index.html';
+    }
+</script>
+<link rel="stylesheet" href="../assets/css/paginasStyle.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/paginasStyle.css">
-    <title></title>
-</head>
-
-<body>
+<div class="contenedor-pagina-mujer">
     <div class="encabezado-contenedor">
         <div class="encabezado-hombre">
             <span>Línea femeninca EAVANT</span>
@@ -242,166 +240,11 @@
             </button>
         </div>
         <div class="tarjetas-productos">
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/vestidoGranate.jpg" alt="">
-                    <button class="agregar-carrito-btn">
-                        <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir
-                    </button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 150.00
-
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Vestido de Fiesta Granate
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/chaquetaBlazer.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 120.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Chaqueta Blazer Negra
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/conjuntobeigue.png" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 170.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Conjunto de Blazer y Pantalón Beige
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/blusaBeige.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-
-                        </span>
-                        <span class="precio-prod">S/. 95.00
-
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Blusa Beige con Detalles en Encaje
-                    </span>
-                </div>
-            </article>
-
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/chalecoGris.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 110.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Chaleco Gris de Lana
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/vestidopurple.jpg " alt="">
-                    <button> <img src=" ../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 140.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Vestido Morado con Detalles en Encaje
-
-                    </span>
-                </div>
-            </article>
-
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/VestidoLargo.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 85.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Vestido Largo con Estampado Floral
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/blusaAzul.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 75.00
-
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Blusa Azul con Detalles en Encaje
-
-                    </span>
-                </div>
-            </article>
-            <article class="pieza-item ">
-                <div class="imagen-contenedor aspect-square">
-                    <img src="../assets/img/prendasMujer/camisaRayas.jpg" alt="">
-                    <button> <img src="../assets/img/HugeiconsShoppingBasketAdd01.svg" alt="">Añadir</button>
-                </div>
-                <div class="info-producto">
-                    <div class="cont-precio">
-                        <span class="coleccion-prod">COLECCIÓN MUJER
-                        </span>
-                        <span class="precio-prod">S/. 90.00
-                        </span>
-                    </div>
-                    <span class="nombre-prod">Camisa de Rayas con Detalles en Encaje
-                    </span>
-                </div>
-            </article>
+            <!-- Las tarjetas dinámicas se inyectarán aquí -->
+        </div>
+        <div id="centinela-paginacion" class="centinela-paginacion">
+            Cargando más piezas...
         </div>
     </section>
 
-    <script src="../assets/js/ventanas.js"></script>
-</body>
-
-</html>
+</div>
